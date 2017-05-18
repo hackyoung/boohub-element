@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module>
+  <script>
+    /**
+     * `polymer-root`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class BoohubElement extends Polymer.Element {
+
+      absLeft()
+      {
+        var actualLeft = this.offsetLeft;
+        var current = this.offsetParent;
+        while (current !== null){
+          actualLeft += current.offsetLeft;
+          current = current.offsetParent;
+        }
+        return actualLeft;
+      }
+
+      absTop()
+      {
+        var actualTop = this.offsetTop;
+        var current = this.offsetParent;
+        while (current !== null){
+          actualTop += current.offsetTop;
+          current = current.offsetParent;
+        }
+        return actualTop;
+      }
+    }
+  </script>
+</dom-module>

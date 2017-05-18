@@ -1,0 +1,29 @@
+<link rel="import" href="../boohub-element.html">
+
+<dom-module is="test-element">
+  <template>
+    <div>absolute left: [[absLeft]]</div>
+    <div>absolute top: [[absTop]]</div>
+  </template>
+  <script>
+    class TestElement extends BoohubElement {
+      static get is () {
+        return 'test-element';
+      }
+
+      static get attributes() {
+        return {
+          absLeft: {
+            type: Number,
+            computed: 'absLeft'
+          },
+          absTop: {
+            type: Number,
+            computed: 'absTop'
+          }
+        };
+      }
+    }
+    window.customElements.define(TestElement.is, TestElement);
+  </script>
+</dom-module>
